@@ -423,6 +423,8 @@ class WysiwygEditor extends Component {
       wrapperStyle,
       uploadCallback,
       ariaLabel,
+      renderHeader,
+      renderToolbar,
     } = this.props;
 
     const controlProps = {
@@ -445,6 +447,9 @@ class WysiwygEditor extends Component {
         onBlur={this.onWrapperBlur}
         aria-label="rdw-wrapper"
       >
+        {
+          renderHeader && renderHeader()
+        }
         {!toolbarHidden && (
           <div
             className={classNames('rdw-editor-toolbar', toolbarClassName)}
@@ -469,6 +474,9 @@ class WysiwygEditor extends Component {
               toolbarCustomButtons.map((button, index) =>
                 React.cloneElement(button, { key: index, ...controlProps })
               )}
+              {
+                renderToolbar && renderToolbar()
+              }
           </div>
         )}
         <div
