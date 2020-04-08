@@ -6,7 +6,7 @@ const precss = require('precss');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
+  // devtool: 'source-map',
   entry: ['./src/index'],
   output: {
     path: path.join(__dirname, '../dist'),

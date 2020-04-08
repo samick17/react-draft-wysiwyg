@@ -449,9 +449,7 @@ class WysiwygEditor extends Component {
         onBlur={this.onWrapperBlur}
         aria-label="rdw-wrapper"
       >
-        {
-          renderHeader && renderHeader()
-        }
+        
         {!toolbarHidden && (
           <div
             className={classNames('rdw-editor-toolbar', toolbarClassName)}
@@ -464,6 +462,9 @@ class WysiwygEditor extends Component {
             aria-hidden={(!editorFocused && toolbarOnFocus).toString()}
             onFocus={this.onToolbarFocus}
           >
+            {
+              renderHeader && renderHeader()
+            }
             {toolbar.options.map((opt, index) => {
               const Control = Controls[opt];
               const config = toolbar[opt];
