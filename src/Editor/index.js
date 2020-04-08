@@ -329,6 +329,8 @@ class WysiwygEditor extends Component {
       'customDecorators',
       'handlePastedText',
       'customStyleMap',
+      'renderHeader',
+      'renderToolbar',
     ]);
 
   getStyleMap = props => ({ ...getCustomStyleMap(), ...props.customStyleMap });
